@@ -1,0 +1,9 @@
+import subprocess
+meta_data = subprocess.check_output("netsh wlan show networks mode=bssid", text=True)
+print(meta_data)
+
+#signal
+signal_strength_percent = 90
+signal_strength_percent = max(0, min(100, signal_strength_percent))
+squares = '■' * (signal_strength_percent // 10)
+print(f"Signal Bars: {squares}")
